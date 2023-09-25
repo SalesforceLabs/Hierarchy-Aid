@@ -1,0 +1,66 @@
+<template>
+    <!--Error Panel-->
+    <div if:true={isError}>
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+            <span class="slds-assistive-text">error</span>
+            <h2>The Heirarchy cannot be displayed. Please contact the system administrator for further assistance.</h2>
+        </div>
+    </div>
+    <div if:false={isError} class="slds-m-top_medium slds-m-bottom_x-large">
+        <!-- Hierarchy Grid Panel -->
+        <template if:false={isloaded}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <template if:true={isloaded}>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-tree-grid
+                    columns={gridColumns}
+                    data={gridData}
+                    key-field="Id"
+                    hide-checkbox-column="true"
+                    onrowaction={handleRowAction}
+                    expanded-rows={expandedRowId}
+                    selected-rows={selectedRows}
+                ></lightning-tree-grid>
+            </div>
+        </template>
+        <!--Edit Page Pop-up-->
+        <template if:true={openEdit}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse slds-button_icon-small" title="Close">
+                            <lightning-icon icon-name="utility:close" variant="inverse" size="medium" alternative-text="Close" title="Close" onclick={handleReset}></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Edit Record</h2>
+                    </header>
+
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning-record-edit-form record-id={recordEditId}
+                                    object-api-name={objApiName} onsuccess={handleSuccess}>
+                            <lightning-messages>
+                            </lightning-messages>
+                            <template for:each={editColumns} for:item="column">
+                                <lightning-input-field key={column.fieldName} field-name={column.fieldName} class="recordEditFields">
+                                </lightning-input-field>
+                            </template>
+                            <div class="form-footer slds-p-vertical_medium slds-align_absolute-center">
+                                <lightning-button class="slds-m-right_small" label="Cancel" onclick={handleReset}></lightning-button>
+                                <lightning-button
+                                    variant="brand"
+                                    type="submit"
+                                    name="update"
+                                    label="Save">
+                                </lightning-button>
+                            </div>
+                        </lightning-record-edit-form>
+                    </div>
+
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>       
+    </div>
+</template>

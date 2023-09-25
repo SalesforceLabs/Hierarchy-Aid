@@ -1,0 +1,106 @@
+{
+
+                "colList": [
+                            {   
+                                "fieldName" : "Id",
+                                "label" : "Account Name",
+                                "type" : "url",
+                                "typeAttributes" : {
+                                    "label" : {
+                                        "fieldName" : "Name"
+                                    },
+                                    "target" : "_blank"
+                                }
+                            },
+                            {   
+                                "fieldName" : "Industry",
+                                "label" : "Industry",
+                                "type" : "text"
+                            },
+                            {   
+                                "fieldName" : "OwnerId",
+                                "label" : "Owner Id",
+                                "type" : "url",
+                                "typeAttributes" : {
+                                    "label" : {
+                                        "fieldName" : "Owner.Name"
+                                    },
+                                    "target" : "_blank"
+                                }
+                            },
+                            {   
+                                "fieldName" : "Phone",
+                                "label" : "Account Phone",
+                                "type" : "phone"
+                            },
+                            { 
+                                "initialWidth" : "80"  ,
+                                "type" : "button",
+                                "typeAttributes" : {
+                                    "iconName" : "utility:edit"
+                                }
+                            }
+                    ],
+                "sObjectList":
+                    [
+                        {
+                            "Id" : "0015g0000068HmCAAU",
+                            "Industry" : "Education",
+                            "Name": "University of Arizona",
+                            "Owner" : {
+                                "Id" : "0055g000004cBKvAAM",
+                                "Name" : "Kavita Kanthaliya"
+                            },
+                            "OwnerId" : "0055g000004cBKvAAM",
+                            "ParentId" : "0015g0000068HmFAAU",
+                            "Phone" : "(520) 773-9050"
+                        },
+                        {
+                            "Id" : "0015g0000068HmFAAU",
+                            "Industry" : "Biotechnology",
+                            "Name": "GenePoint",
+                            "Owner" : {
+                                "Id" : "0055g000004cBKvAAM",
+                                "Name" : "Kavita Kanthaliya"
+                            },
+                            "OwnerId" : "0055g000004cBKvAAM",
+                            "ParentId" : "0015g0000068HmEAAU",
+                            "Phone" : "(650) 867-3450"
+                        },
+                        {
+                            "Id" : "0015g0000068HmBAAU",
+                            "Industry" : "Transportation",
+                            "Name": "Express Logistics and Transport",
+                            "Owner" : {
+                                "Id" : "0055g000004cBKvAAM",
+                                "Name" : "Kavita Kanthaliya"
+                            },
+                            "OwnerId" : "0055g000004cBKvAAM",
+                            "ParentId" : "0015g0000068HmCAAU",
+                            "Phone" : "(503) 421-7800"
+                        },
+                        {
+                            "Id" : "0015g0000068HmEAAU",
+                            "Industry" : "Energy",
+                            "Name": "United Oil & Gas, Singapore",
+                            "Owner" : {
+                                "Id" : "0055g000004cBKvAAM",
+                                "Name" : "Kavita Kanthaliya"
+                            },
+                            "OwnerId" : "0055g000004cBKvAAM",
+                            "ParentId" : "0015g0000068HmAAAU",
+                            "Phone" : "(650) 450-8810"
+                        },
+                        {
+                            "Id" : "0015g0000068HmAAAU",
+                            "Industry" : "Energy",
+                            "Name": "United Oil & Gas Corp.",
+                            "Owner" : {
+                                "Id" : "0055g000004cBKvAAM",
+                                "Name" : "Kavita Kanthaliya"
+                            },
+                            "OwnerId" : "0055g000004cBKvAAM",
+                            "Phone" : "(212) 842-5500"
+                        }
+                    ]
+}

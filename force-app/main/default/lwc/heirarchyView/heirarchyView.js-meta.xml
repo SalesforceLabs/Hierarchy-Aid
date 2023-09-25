@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__Tab</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage">
+            <property name="objApiName" type="String" default="" placeholder="Object API Name" label="Enter the Api name of Object" required="true"/>
+            <property name="objFieldNames" type="String" default="" placeholder="Comma separated field API names" label="Enter field API names to be shown" required="true"/>
+            <property name="objRelationshipField" type="String" default="" placeholder="Relationship field API name" label="Enter Relationship field Name" required="true"/>
+            <property name="whereCondition" type="String" placeholder="eg: name like '%abc%'" label="Enter where clause condition"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
